@@ -2,6 +2,8 @@ import gsap from 'gsap'
 import {useGSAP} from "@gsap/react";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useRef, useState} from "react";
+import Button from "./Button.jsx";
+import {TiLocationArrow} from "react-icons/ti";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -131,6 +133,12 @@ const Hero = () => {
                             Enter the Metagame Layer <br /> Unleash the Play Economy
                         </p>
 
+                        <Button
+                            id="watch-trailer"
+                            title="Watch trailer"
+                            leftIcon={<TiLocationArrow />}
+                            containerClass="bg-yellow-300 flex-center gap-1"
+                        />
                     </div>
                 </div>
             </div>
