@@ -12,18 +12,35 @@ const About = () => {
             scrollTrigger: {
                 trigger: "#clip",
                 start: "center center",
-                end: "+=800 center",
+                end: "+=600 center",
                 scrub: 0.5,
                 pin: true,
                 pinSpacing: true,
             },
         });
 
-        clipAnimation.to(".mask-clip-path", {
-            width: "100vw",
-            height: "100vh",
-            borderRadius: 0,
-        });
+        clipAnimation.fromTo(".mask-clip-path2",
+            {
+                transformPerspective: 600,
+                rotateX: 10,
+                rotateY: 18,
+                width: "40vw",
+                height: "70vh",
+                xPercent: -50, // Centers during animation
+                left: "50%",
+                borderRadius: "6%",
+            },
+            {
+                transformPerspective: 10000,
+                rotateX: 0,
+                rotateY: 0,
+                width: "100vw",
+                height: "100vh",
+                xPercent: -50, // Maintains center
+                left: "50%",
+                borderRadius:0
+            }
+        );
     });
 
     return (
@@ -48,7 +65,7 @@ const About = () => {
             </div>
 
             <div className="h-dvh w-screen" id="clip">
-                <div className="mask-clip-path about-image">
+                <div className="mask-clip-path2 about-image ">
                     <img
                         src="img/about.webp"
                         alt="Background"
