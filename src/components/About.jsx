@@ -21,14 +21,14 @@ const About = () => {
 
         clipAnimation.fromTo(".mask-clip-path2",
             {
-                transformPerspective: 600,
+                transformPerspective: 400,
                 rotateX: 10,
                 rotateY: 18,
-                width: "40vw",
+                width: "30vw",
                 height: "70vh",
                 xPercent: -50, // Centers during animation
                 left: "50%",
-                borderRadius: "6%",
+                borderRadius: "3%",
             },
             {
                 transformPerspective: 10000,
@@ -65,11 +65,12 @@ const About = () => {
             </div>
 
             <div className="h-dvh w-screen" id="clip">
+                <img src="/img/stones.webp" alt={"Stones"} className={"fixed top-0 left-0 w-full h-full object-cover pointer-events-none z-50 opacity-50"}/>
                 <div className="mask-clip-path2 about-image ">
                     <img
                         src="img/about.webp"
                         alt="Background"
-                        className="absolute left-0 top-0 size-full object-cover"
+                        className="absolute left-0 top-1 size-full object-cover"
                     />
                 </div>
             </div>
