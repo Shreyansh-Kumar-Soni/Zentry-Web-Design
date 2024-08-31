@@ -6,6 +6,11 @@ import Story from "./components/Story.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import Vault from "./components/Vault.jsx";
+// import gsap from "gsap";
+// import { SplitText } from 'gsap/SplitText';
+// import { ScrollTrigger} from "gsap/ScrollTrigger";
+//
+// gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function App() {
   return (
