@@ -1,11 +1,43 @@
 import gsap from "gsap";
-import { useRef } from "react";
+import {ScrollTrigger} from "gsap/all";
+import {useEffect, useRef} from "react";
 
 import Button from "./Button";
 import AnimatedTitle from "./AnimatedTitle";
 
 const FloatingImage = () => {
     const frameRef = useRef(null);
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // Background color animation timeline
+            const bgTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top center", // When top hits center of viewport
+                    end: "bottom center", // When bottom leaves center
+                    onEnter: () => {
+                        gsap.to(document.body, {
+                            backgroundColor: "#000000",
+                            duration: 0.5
+                        });
+                    },
+                    onEnterBack: () => {  // This fires when scrolling back up
+                        gsap.to(document.body, {
+                            backgroundColor: "#000000",
+                            duration: 0.5
+                        });
+                    },
+                }
+            });
+
+        }, sectionRef);
+
+        return () => ctx.revert();
+    }, []);
 
     const handleMouseMove = (e) => {
         const { clientX, clientY } = e;
@@ -46,7 +78,7 @@ const FloatingImage = () => {
     };
 
     return (
-        <div id="story" className="min-h-dvh w-screen bg-black text-blue-50">
+        <div id="story" ref={sectionRef} className="min-h-dvh w-screen text-blue-50">
             <div className="flex size-full flex-col items-center py-10 pb-24">
                 <p className="font-general text-sm uppercase md:text-[10px]">
                     the multiversal ip world

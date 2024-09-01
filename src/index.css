@@ -115,6 +115,10 @@ body {
     will-change: opacity, transform;
   }
 
+  .animated-word2 {
+    @apply special-font font-zentry font-black opacity-100;
+  }
+
   .bento-tilt_1 {
     @apply relative border-hsla col-span-2 overflow-hidden rounded-md transition-transform duration-300 ease-out;
   }
