@@ -3,10 +3,56 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
 import AnimatedTitle from "./AnimatedTitle";
+import {useEffect, useRef} from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
+    const containerRef = useRef(null);
+
+
+    useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger);
+
+        const ctx = gsap.context(() => {
+            // Background color animation timeline
+            const bgTl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top center", // When top hits center of viewport
+                    end: "bottom center", // When bottom leaves center
+                    onEnter: () => {
+                        gsap.to(document.body, {
+                            backgroundColor: "#ffffff",
+                            duration: 0.5
+                        });
+                    },
+                    onEnterBack: () => {  // This fires when scrolling back up
+                        gsap.to(document.body, {
+                            backgroundColor: "#ffffff",
+                            duration: 0.5
+                        });
+                    },
+                    onLeave: () => {
+                        gsap.to(document.body, {
+                            backgroundColor: "#000000",
+                            duration: 0.5
+                        });
+                    },
+                    // onLeaveBack: () => {
+                    //     gsap.to(document.body, {
+                    //         backgroundColor: "",
+                    //         duration: 0.5
+                    //     });
+                    // }
+                }
+            });
+
+        }, containerRef);
+
+        return () => ctx.revert();
+    }, []);
+
     useGSAP(() => {
         const clipAnimation = gsap.timeline({
             scrollTrigger: {
@@ -44,7 +90,7 @@ const About = () => {
     });
 
     return (
-        <div id="about" className="min-h-screen w-screen">
+        <div id="about" ref={containerRef} className="min-h-screen w-screen">
             <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
                 <p className="font-general text-sm uppercase md:text-[10px]">
                     Welcome to Zentry

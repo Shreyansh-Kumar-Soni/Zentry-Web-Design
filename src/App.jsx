@@ -6,6 +6,7 @@ import Story from "./components/Story.jsx";
 import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import Vault from "./components/Vault.jsx";
+import Glance from "./components/Glance.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Features />
         <Story />
         <Vault />
+        <Glance />
         <Contact />
         <Footer />
     </main>
