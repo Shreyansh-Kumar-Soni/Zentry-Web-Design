@@ -1,7 +1,66 @@
-import {TiLocationArrow} from "react-icons/ti";
 import {useEffect, useRef} from "react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/all";
+import {useGSAP} from "@gsap/react";
+
+const backers = [
+    {
+        backername: "YZiLabs",
+        type: "BACKERS"
+    },
+    {
+        backername: "Coinbase Ventures",
+        type: "BACKERS"
+    },
+    {
+        backername: "Pantera Capital",
+        type: "BACKERS"
+    },
+    {
+        backername: "DeFiance Capital",
+        type: "BACKERS"
+    },
+    {
+        backername: "Animoca Brands",
+        type: "BACKERS"
+    },
+    {
+        backername: "SkyVision Capital",
+        type: "BACKERS"
+    },
+    {
+        backername: "Play Venture",
+        type: "BACKERS"
+    },
+    {
+        backername: "Vessel Capital",
+        type: "BACKERS"
+    },
+    {
+        backername: "Arche Fund",
+        type: "BACKERS"
+    },
+    {
+        backername: "Marblex",
+        type: "GAMING"
+    },
+    {
+        backername: "Fnatic",
+        type: "GAMING"
+    },
+    {
+        backername: "XSET",
+        type: "GAMING"
+    },
+    {
+        backername: "Jambo",
+        type: "WEB3"
+    },
+    {
+        backername: "AWS",
+        type: "Brands"
+    }
+];
 
 const Glance = () => {
     const sectionRef = useRef(null);
@@ -10,101 +69,153 @@ const Glance = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
-            // Background color animation timeline
-            const bgTl = gsap.timeline({
+            gsap.timeline({
                 scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top center", // When top hits center of viewport
-                    end: "bottom center", // When bottom leaves center
+                    start: "top center",
+                    end: "bottom center",
                     onEnter: () => {
                         gsap.to(document.body, {
                             backgroundColor: "#000000",
-                            duration: 0.5
+                            duration: 0.5,
                         });
                     },
-                    onEnterBack: () => {  // This fires when scrolling back up
+                    onEnterBack: () => {
                         gsap.to(document.body, {
                             backgroundColor: "#000000",
-                            duration: 0.5
+                            duration: 0.5,
                         });
                     },
-                }
+                },
             });
-
         }, sectionRef);
 
         return () => ctx.revert();
     }, []);
+
     return (
-        <section ref={sectionRef} className={"bg-white"}>
-            <div className={"container mx-auto "}>
-                <p className="bento-title special-font py-16 !text-8xl text-white">Zentry at a<br/> Glance</p>
-
-                <div>
-
+        <section ref={sectionRef} className="flex flex-col">
+            <div className="container mx-auto w-full">
+                <div className="mb-8 text-white">
+                    <p className="font-general text-[1vw] uppercase">our universe in a nutshell</p>
+                    <p className="font-zentry !text-[9vw] !leading-[0.8]">Zentry at a<br/> Glance</p>
                 </div>
-                <div className={"relative grid h-[135vh] grid-cols-1  md:grid-cols-2"}>
-                    <div className={""}>
-                        <div
-                            className={"relative size-full shadow-lg overflow-hidden bg-violet-300 rounded-lg h-[600px] w-[420px]"}>
-                            <div className={"font-zentry !text-[18vw] uppercase text-center mt-0"}>
-                                500k+
-                            </div>
-                            <img src="img/gallery-1.webp"
-                                 className="absolute left-0 top-0 size-full object-cover object-center"/>
 
+                <div className="relative grid h-min-[135vh] grid-cols-1 gap-5 md:grid-cols-2">
+                    {/* Left Column */}
+                    <div className="flex flex-col items-end gap-5">
+                        {/* Container 1 - 220 x 130 (1.69) */}
+                        <div className="h-[10vw]"></div>
+                        <div
+                            className="relative w-full max-w-[36vw] aspect-[169/100] shadow-lg overflow-hidden  rounded-lg text-white shadow-[inset_0_0_0_0.5px_rgba(156,163,175,0.5)]">
+                            <div className="absolute px-3 py-2 text-[1vw]">Products</div>
+                            <div className="absolute inset-0 flex items-start justify-start px-3 py-3">
+                                <span className="font-zentry text-[8vw] uppercase leading-tight">4+</span>
+                            </div>
+                            <video
+                                src="videos/card-1.webm"
+                                autoPlay
+                                loop
+                                className="absolute inset-0 w-full h-full object-cover object-end"
+                            />
                         </div>
-                        <div
-                            className={"relative size-full shadow-lg overflow-hidden bg-violet-300 rounded-lg h-[600px] w-[420px]"}>
-                            <div className={"font-zentry !text-[18vw] uppercase text-center mt-0"}>
-                                500k+
-                            </div>
-                            <img src="img/gallery-1.webp"
-                                 className="absolute left-0 top-0 size-full object-cover object-center"/>
 
+                        {/* Container 2 - 150 x 140 (1.07) */}
+                        <div
+                            className="relative w-full max-w-[22vw] aspect-[107/100] shadow-lg overflow-hidden bg-yellow-300 rounded-lg text-black">
+                            <div className="absolute top-0 left-0 right-0 flex justify-center">
+                                <span className="special-font text-[14vw] uppercase leading-none mt-1 "><b>30+</b></span>
+                            </div>
+                            <div className="absolute inset-0 flex items-end justify-end text-[1vw] px-2 py-2">
+                                Partners
+                            </div>
                         </div>
-                        <div
-                            className={"relative size-full shadow-lg overflow-hidden bg-violet-300 rounded-lg h-[600px] w-[420px]"}>
-                            <div className={"font-zentry !text-[18vw] uppercase text-center mt-0"}>
-                                500k+
-                            </div>
-                            <img src="img/gallery-1.webp"
-                                 className="absolute left-0 top-0 size-full object-cover object-center"/>
 
+                        {/* Container 4 - 260 x 330 (0.79) */}
+                        <div
+                            className="relative w-full max-w-[32vw] aspect-[79/120] shadow-lg overflow-hidden bg-violet-300 rounded-lg">
+                            <div className="absolute text-general text-[1vw] px-3 py-3">
+                                Treasury
+                            </div>
+                            <div className="absolute inset-0 flex items-start justify-start py-4 px-3">
+                                <span className="font-zentry text-[7vw] uppercase leading-tight">140M+</span>
+                            </div>
+                            <video
+                                className="absolute inset-0 w-full h-full object-cover object-center"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                            >
+                                <source src="/videos/card-5.webm" type="video/webm"/>
+                            </video>
                         </div>
                     </div>
-                    <div>
-                        <div
-                            className={"flex relative size-full shadow-lg overflow-hidden bg-violet-300 rounded-lg h-[600px] w-[420px]"}>
-                            <div className={"font-zentry !text-[18vw] uppercase text-center mt-0"}>
-                                500k+
-                            </div>
-                            <img src="img/gallery-1.webp"
-                                 className="absolute left-0 top-0 size-full object-cover object-center"/>
 
+                    {/* Right Column */}
+                    <div className="flex flex-col items-start gap-5">
+                        {/* Container 3 - 260 x 370 (0.70) */}
+                        <div
+                            className="relative w-full max-w-[35vw] aspect-[7/10] shadow-lg overflow-hidden bg-violet-300 rounded-lg">
+                            <img src="img/gallery-1.webp" alt="..."
+                                 className="absolute w-full h-full object-cover object-center"/>
+                            <p className="absolute px-3 py-2 text-[1vw] ">Residents</p>
+                            <div className=" inset-1 flex items-start justify-center py-4">
+                                <span
+                                    className="font-zentry special-font text-[10vw] uppercase leading-tight [transform:scale(1.4)]" ><b>500K+</b></span>
+                            </div>
                         </div>
-                        <div
-                            className={"flex relative size-full shadow-lg overflow-hidden bg-violet-300 rounded-lg h-[600px] w-[420px]"}>
-                            <div className={"font-zentry !text-[18vw] uppercase text-center mt-0"}>
-                                500k+
-                            </div>
-                            <img src="img/gallery-1.webp"
-                                 className="absolute left-0 top-0 size-full object-cover object-center"/>
 
+                        {/* Container 5 - 180 x 150 (1.20) */}
+                        <div
+                            className="relative w-full max-w-[22vw] aspect-[1/1] shadow-lg overflow-hidden bg-black rounded-lg shadow-[inset_0_0_0_0.5px_rgba(156,163,175,0.5)] text-white">
+                            <div className="absolute inset-0 flex items-start justify-start py-2 px-2">
+                                <span className="font-zentry text-[4vw] uppercase leading-[0.8]">World class <br/> backers</span>
+                            </div>
+                            <div className="absolute text-[0.8vw] inset-0 flex justify-end items-end px-2 py-2">
+                                <div className="text-right">
+                                    coinbase ventures<br/>
+                                    yzi labs<br/>
+                                    spartan<br/>
+                                    longhash<br/>
+                                    pantera capital<br/>
+                                    animoca brands<br/>
+                                    defiance capital<br/>
+                                    play ventures<br/>
+                                    skyvision capital<br/>
+                                    vessel capital<br/>
+                                    arche fund<br/>
+                                    synergis<br/>
+                                </div>
+                            </div>
                         </div>
-                        <div
-                            className={"flex relative size-full shadow-lg overflow-hidden bg-violet-300 rounded-lg h-[600px] w-[420px]"}>
-                            <div className={"font-zentry !text-[18vw] uppercase text-center mt-0"}>
-                                500k+
-                            </div>
-                            <img src="img/gallery-1.webp"
-                                 className="absolute left-0 top-0 size-full object-cover object-center"/>
 
+                        {/* Container 6 - 290 x 130 (2.23) */}
+                        <div
+                            className="relative w-full max-w-[34vw] aspect-[180/100] shadow-lg overflow-hidden bg-neutral-200 rounded-lg">
+                            <div className="text-[1vw] leading-tight px-2 py-2">Revnue Generated <br/>2024</div>
+                            <div className="absolute inset-0 flex items-start justify-center ">
+                                <span
+                                    className="font-zentry special-font text-[17vw] uppercase leading-tight [transform:scaleX(1.3)]">
+                                    40<b>M</b>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div className="flex text-white w-full px-[3vw] py-40">
+                <div className="px-[3vw] text-[1.2vw] !text-gray-500 w-[300px]">
+                    <span className="!text-white">Our backers</span> include top-tier VCs, funds, and companies, providing expertise, network and resouses to fuel our project's success.
+                </div>
+                <div className="">
+                    <h1 className="font-zentry">Our partners</h1>
+                    {}
+                </div>
+            </div>
         </section>
-    )
-}
-export default Glance
+    );
+};
+
+export default Glance;

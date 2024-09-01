@@ -83,12 +83,12 @@ const Vault = () => {
 
     return (<div ref={containerRef} className="min-h-screen w-screen py-20 relative z-0">
         <div className="container mx-auto text-center relative z-10">
-            <p className="font-general uppercase px-5 py-5 text-sm">who we are</p>
+            <p className="font-general uppercase px-5 py-5 text-[1vw]">who we are</p>
 
             <p ref={textRef} style={{color: 'black'}}
-               className="font-zentry mx-auto max-w-4xl text-6xl relative z-20">
+               className="font-zentry mx-auto max-w-4xl text-[8vw] relative z-20 leading-[0.8]">
                 We&#39;re building <br/>a new
-                <span className="relative inline-block group align-middle mx-5 -translate-y-[15%] z-[9999] ">
+                <span className="relative inline-block group align-middle mx-5 -translate-y-[20%] z-[9999] ">
                     <span className="inline-block w-[0.5em] h-[0.5em] bg-black rounded-md cursor-pointer"/>
                     <div className="absolute hidden group-hover:block left-1/2 top-1/2 z-[9999] w-[300px] h-[300px] transform -translate-x-1/2 -translate-y-1/2 transition-all duration-200 origin-center">
                             <img
@@ -100,7 +100,7 @@ const Vault = () => {
                 </span>
                 <span className="relative -z-[9999]">reality</span> <br/> that rewards<br/> players
 
-                <span className="relative inline-block group align-middle mx-5 -translate-y-[15%] ">
+                <span className="relative inline-block group align-middle mx-5 -translate-y-[20%] ">
                     <span className="inline-block w-[0.5em] h-[0.5em] bg-black rounded-md cursor-pointer"/>
 
                     <div className="absolute hidden group-hover:block left-1/2 top-1/2 z-[9999] w-[300px] h-[300px] transform -translate-x-1/2 -translate-y-1/2 transition-all duration-200 origin-center">
@@ -112,7 +112,7 @@ const Vault = () => {
                     </div>
                 </span>
                 <span className="relative -z-[9999]">and</span> <br/> empowers <br/> humans &amp; AI<br/> to
-                <span className="relative inline-block group align-middle mx-5 -translate-y-[15%] z-[9999]">
+                <span className="relative inline-block group align-middle mx-5 -translate-y-[20%] z-[9999]">
                     <span className="inline-block w-[0.5em] h-[0.5em] bg-black rounded-md cursor-pointer"/>
 
                     <div className="absolute hidden group-hover:block left-1/2 top-1/2 z-[9999] w-[300px] h-[300px] transform -translate-x-1/2 -translate-y-1/2 transition-all duration-200 origin-center">
@@ -126,7 +126,7 @@ const Vault = () => {
                 <span className="relative z-[9999]">thrive</span>
             </p>
 
-            <p className="font-general text-sm px-4 py-6">
+            <p className="font-general text-[1vw] px-4 py-6">
                 Zentry envisions a future where players, emerging tech,<br/>
                 and a new economy unite at the convergence of gaming <br/>
                 and AI.
