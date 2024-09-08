@@ -83,10 +83,10 @@ const Vault = () => {
 
     return (<div ref={containerRef} className="min-h-screen w-screen py-20 relative z-0">
         <div className="container mx-auto text-center relative z-10">
-            <p className="font-general uppercase px-5 py-5 text-[1vw]">who we are</p>
+            <p className="font-general uppercase px-5 py-5 text-lg md:text-[1vw]">who we are</p>
 
             <p ref={textRef} style={{color: 'black'}}
-               className="font-zentry mx-auto max-w-4xl text-[8vw] relative z-20 leading-[0.8]">
+               className="font-zentry mx-auto max-w-4xl text-7xl md:text-[8vw] relative z-20 leading-[0.8]">
                 We&#39;re building <br/>a new
                 <span className="relative inline-block group align-middle mx-5 -translate-y-[20%] z-[9999] ">
                     <span className="inline-block w-[0.5em] h-[0.5em] bg-black rounded-md cursor-pointer"/>
@@ -126,13 +126,13 @@ const Vault = () => {
                 <span className="relative z-[9999]">thrive</span>
             </p>
 
-            <p className="font-general text-[1vw] px-4 py-6">
-                Zentry envisions a future where players, emerging tech,<br/>
-                and a new economy unite at the convergence of gaming <br/>
+            <p className="font-general text-lg md:text-[1vw] px-4 py-6 md:w-full">
+                Zentry envisions a future where <br className="md:hidden"/> players, emerging tech,<br className="hidden md:block"/>
+                and a new<br className="md:hidden"/> economy unite at the convergence of<br className="md:hidden"/> gaming <br className="hidden md:block"/>
                 and AI.
             </p>
 
-            <Button title="discover who we are"/>
+            <Button title="discover who we are" containerClass="scale-2 md:scale-1"/>
         </div>
     </div>);
 };

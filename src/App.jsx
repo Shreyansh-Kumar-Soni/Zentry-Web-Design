@@ -9,6 +9,7 @@ import Vault from "./components/Vault.jsx";
 import Glance from "./components/Glance.jsx";
 import Universe from "./components/Universe.jsx";
 import Updates from "./components/Updates.jsx";
+import Label from "./components/Label.jsx";
 
 function App() {
   return (
@@ -21,6 +22,8 @@ function App() {
         <Universe />
         <Vault />
         <Glance />
+        <Label />
+        <div className="min-h-[148px]"></div>
         <Updates />
         <Contact />
         <Footer />
