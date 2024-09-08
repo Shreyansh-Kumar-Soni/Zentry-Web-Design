@@ -7,6 +7,8 @@ import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
 import Vault from "./components/Vault.jsx";
 import Glance from "./components/Glance.jsx";
+import Universe from "./components/Universe.jsx";
+import Updates from "./components/Updates.jsx";
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
         <About />
         <Features />
         <Story />
+        <Universe />
         <Vault />
         <Glance />
+        <Updates />
         <Contact />
         <Footer />
     </main>

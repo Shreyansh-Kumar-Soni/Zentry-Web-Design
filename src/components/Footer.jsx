@@ -17,6 +17,7 @@ const Footer = () => {
         <footer className="w-screen bg-[#5542ff] py-4 text-black">
             <div className="w-full overflow-hidden py-2 text-center">
                 <div className="fill-screen-text mx-auto inline-block text-center">
+                    {/*font-size: 664.357px; transform: matrix3d(0.998831, 0.00653189, 0, -0.000049029, -0.0035477, 0.980175, 0, -0.000008774, 0, 0, 1, 0, -7.54388, -2.79695, 0, 1);*/}
                     zentry
                 </div>
             </div>
