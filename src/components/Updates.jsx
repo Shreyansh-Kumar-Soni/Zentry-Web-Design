@@ -100,7 +100,7 @@ const Updates = () => {
             {/* Right Section: Images with mouse movement effect */}
             <div className='flex flex-col gap-5 md:w-[50%] mt-80 md:mt-0 px-12 w-full right-0'>
                 {/* First Image */}
-                <div className='relative items-end justify-end'>
+                <div className='relative -mr-12 w-[calc(100%+3rem)] md:mr-0 md:w-full md:ml-0  ml-auto px-2'>
                     <Tilt>
                     <img
 
@@ -116,7 +116,7 @@ const Updates = () => {
                 </div>
 
                 {/* Second Image */}
-                <div className='relative '>
+                <div className='relative -ml-12 w-[calc(100%+3rem)] md:mr-0 md:w-full md:ml-0  px-2'>
                     <Tilt>
                     <img
                         ref={(el) => (imgRefs.current[1] = el)}

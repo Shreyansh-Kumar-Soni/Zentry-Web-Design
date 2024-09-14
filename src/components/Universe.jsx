@@ -37,12 +37,13 @@ const Universe = () => {
     return (
         <section ref={sectionRef} className="min-h-screen p-5 md:p-10">
 
-            <h1 className='font-zentry special-font md:text-[8vw] text-5xl leading-[0.8]'>the univers<b>e</b> <br/> powered by ZE<b>N</b>T</h1>
+            <h1 className='font-zentry special-font md:text-[8vw] text-7xl leading-[0.8]'>the univers<b>e</b> <br/> powered by ZE<b>N</b>T</h1>
+            <div className="px-7">
             <Button
                 id="enter-vault"
                 title="ENTER VAULT"
-                containerClass="!bg-black mt-10 !py-4 font-bold text-white flex-center gap-1"
-            />
+                containerClass="!bg-black mt-10 !py-3 font-bold text-white flex-center [transform:scale(1.4)] md:[transform:scale(1)] gap-1"
+            /></div>
 
             <div className='flex flex-col-reverse md:flex-row justify-between w-full '>
                 <div className='space-y-4 flex flex-col opacity-70 justify-end' >
@@ -51,11 +52,6 @@ const Universe = () => {
                 </div>
                 <video src='videos/symbol_3.webm' className="md:h-96 h-48 max-lg:mb-48 mt-10" autoPlay loop muted />
             </div>
-
-
-
-
-
         </section>
     );
 };
